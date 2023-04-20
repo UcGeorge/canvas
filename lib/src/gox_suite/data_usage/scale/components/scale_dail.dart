@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class ScaleDail extends StatelessWidget {
-  const ScaleDail({super.key});
+  const ScaleDail({super.key, required this.size});
+
+  final Size size;
 
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      size: const Size(24, 24),
+      size: size,
       painter: RPSCustomPainter(),
     );
   }
@@ -49,14 +51,14 @@ class RPSCustomPainter extends CustomPainter {
         size.height * 0.2566069);
     path_0.close();
 
-    Paint paint0Fill = Paint()..style = PaintingStyle.fill;
-    paint0Fill.color = const Color(0xff111C38).withOpacity(1.0);
-    canvas.drawPath(path_0, paint0Fill);
-
     Paint paint1Fill = Paint()..style = PaintingStyle.fill;
     paint1Fill.color = Colors.transparent;
     canvas.drawCircle(Offset(size.width * 0.5000000, size.height * 0.5000000),
         size.width * 0.5000000, paint1Fill);
+
+    Paint paint0Fill = Paint()..style = PaintingStyle.fill;
+    paint0Fill.color = const Color(0xff111C38).withOpacity(1.0);
+    canvas.drawPath(path_0, paint0Fill);
   }
 
   @override
