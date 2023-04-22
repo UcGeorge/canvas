@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../util/flow.util.dart';
 import 'scale/scale.view.dart';
+import 'statistics/statistics.view.dart';
 
 class DataUsage extends StatelessWidget {
   const DataUsage({super.key});
@@ -20,6 +21,13 @@ class DataUsage extends StatelessWidget {
             onTap: () => FlowUtil.moveTo(
               context: context,
               page: const DataUsageScale(),
+            ),
+          ),
+          ListTile(
+            title: const Text("Statistics"),
+            onTap: () => FlowUtil.moveTo(
+              context: context,
+              page: DataUsageStatistics(),
             ),
           )
         ],
